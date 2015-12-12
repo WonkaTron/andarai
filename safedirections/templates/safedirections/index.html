@@ -140,14 +140,8 @@
                         <h4 class="text-white text-center">Select a route</h4>
                         <i class="text-white">(Ctrl-Click for multiple selection)</i>
                         <br>
-                        <select class="right-panel" multiple="" id="waypoints">
-                            <option value="montreal, quebec">Montreal, QBC</option>
-                            <option value="toronto, ont">Toronto, ONT</option>
-                            <option value="chicago, il">Chicago</option>
-                            <option value="winnipeg, mb">Winnipeg</option>
-                            <option value="fargo, nd">Fargo</option>
-                            <option value="calgary, ab">Calgary</option>
-                            <option value="spokane, wa">Spokane</option>
+                        <select class="right-panel" id="waypoints" onchange="route_selector(this.value)">
+                            <!-- JQuery will fill it with the resulting routes -->
                         </select>
                     </div>
                     <div class="col-md-12">
@@ -401,6 +395,7 @@
     <script src="{% static 'safedirections/js/render_map.js' %}"></script>
     <script src="{% static 'safedirections/js/geolocating.js' %}"></script>
     <script src="{% static 'safedirections/js/directions_routing.js' %}"></script>
+    <script src="{% static 'safedirections/js/route_selector.js' %}"></script>
     <script src="{% static 'safedirections/js/waypts_setter.js' %}"></script>
     <script src="{% static 'safedirections/js/main_script.js' %}"></script>
     <script src="{% static 'safedirections/js/CRUD.js' %}"></script>

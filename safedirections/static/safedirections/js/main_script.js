@@ -8,8 +8,5 @@ $(document).ready(function(){
 
     carregaMarkers();
 
-    routes.forEach(function(elem, i) {
-        $("#waypoints").append("<option value=" + i + ">" + elem.summary + "</option>");
-    });
     //google.maps.event.addDomListener(window, 'load', initialize);
 });
