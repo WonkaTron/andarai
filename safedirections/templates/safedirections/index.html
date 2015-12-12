@@ -2,63 +2,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>andaraih</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AndaraiHost - Seu anfitri&atilde;o para te ensinar a andar a&iacute;!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'safedirections/bootstrap-3.3.6-dist/css/bootstrap.min.css' %}">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'safedirections/css/agency.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'safedirections/css/style.css' %}">
+
+    <!-- Custom Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Andara&iacute;Host</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Servi&ccedil;os</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Navegue</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#team">Quem somos</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Welcome To AndaraiH!</div>
+                <div class="intro-heading">Seu anfitri&atilde;o para te ensinar a andar a&iacute;!</div>
+                <a href="#services" class="page-scroll btn btn-xl">Conhe&ccedil;a a ferramenta</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Servi&ccedil;os</h2>
+                    <h3 class="section-subheading text-muted">Ande pelo Rio de Janeiro sem se perder, reporte &aacute;reas perigosas, mantenha a seguran&ccedil;a. Sempre.</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-map-marker"></span>
+                    <h4 class="service-heading">Fique de olho</h4>
+                    <p class="text-muted">Marque locais perigosos no mapa. D&ecirc; notas maiores para locais mais perigosos.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-road"></span>
+                    <h4 class="service-heading">Planeje sua viagem</h4>
+                    <p class="text-muted">Com os dados fornecidos pela comunidade, evite caminhos considerados muito perigosos. Viaje mais tranquilo e com maior seguran&ccedil;a, mesmo em locais que ainda n&atilde;o conhece.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="glyphicon glyphicon-stats"></span>
+                    <h4 class="service-heading">Consulte</h4>
+                    <p class="text-muted">Use nossa API via Web Service para receber informa&ccedil;&otilde;es e estat&iacute;sticas sobre locais do mundo e faça sua pr&oacute;pria aplica&ccedil;&atilde;o.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Navegue</h2>
+                    <h3 class="section-subheading text-muted">Use nossa aplica&ccedil;&atilde;o! Planeje sua viagem e d&ecirc; sua contribui&ccedil;&atilde;o para comunidade. Vote nos pontos de perigo j&acute; criados ou crie novos pontos.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <h1>Calculate your route</h1>
+                <form id="calculate-route" name="calculate-route" action="#" method="get">
+                    <label for="from">From:</label>
+                    <input type="text" id="from" name="from" required="required" placeholder="An address" size="30" />
+                    <a id="from-link" href="#">Get my position</a>
+                    <br />
+
+                    <label for="to">To:</label>
+                    <input type="text" id="to" name="to" required="required" placeholder="Another address" size="30" />
+                    <a id="to-link" href="#">Get my position</a>
+                    <br />
+
+                    <input type="submit" />
+                    <input type="reset" />
+                </form>
+
+                <div id="map"></div>
+                <p id="error"></p>
+
+                <div class="modal fade" id="dangerModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Danger Level</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Level</label>
+                                <select id="dangerLevel" class="form-control">
+                                    <option value="0">Safe</option>
+                                    <option value="1">Warning</option>
+                                    <option value="2">Dangerous</option>
+                                    <option value="3">Very Dangerous</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" onclick="bookmarker()" class="btn btn-default" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="{% static 'safedirections/img/about/1.jpg' %}" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2009-2011</h4>
+                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="{% static 'safedirections/img/about/2.jpg' %}" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>March 2011</h4>
+                                    <h4 class="subheading">An Agency is Born</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="{% static 'safedirections/img/about/3.jpg' %}" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>December 2012</h4>
+                                    <h4 class="subheading">Transition to Full Service</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="{% static 'safedirections/img/about/4.jpg' %}" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>July 2014</h4>
+                                    <h4 class="subheading">Phase Two Expansion</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>Be Part
+                                    <br>Of Our
+                                    <br>Story!
+                                </h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Desenvolvedores</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="{% static 'safedirections/img/team/1.jpg' %}" class="img-responsive img-circle" alt="">
+                        <h4>Aluizio</h4>
+                        <p class="text-muted">Lead Designer</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="{% static 'safedirections/img/team/2.jpg' %}" class="img-responsive img-circle" alt="">
+                        <h4>Hugo de Melo Dantas</h4>
+                        <p class="text-muted">Lead Marketer</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="team-member">
+                        <img src="{% static 'safedirections/img/team/3.jpg' %}" class="img-responsive img-circle" alt="">
+                        <h4>Thales Nathan Caic&oacute; Matias da Silva</h4>
+                        <p class="text-muted">Lead Developer</p>
+                        <ul class="list-inline social-buttons">
+                            <li><a href="#"><i class="fa fa-twitter"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Aside -->
+    <aside class="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="{% static 'safedirections/img/logos/envato.jpg' %}" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="{% static 'safedirections/img/logos/designmodo.jpg' %}" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="{% static 'safedirections/img/logos/themeforest.jpg' %}" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <a href="#">
+                        <img src="{% static 'safedirections/img/logos/creative-market.jpg' %}" class="img-responsive img-centered" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Your Website 2014</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <!-- jQuery -->
     <script src="{% static 'safedirections/js/jquery-1.11.3.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
     <script src="{% static 'safedirections/bootstrap-3.3.6-dist/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{% static 'safedirections/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'safedirections/js/classie.js' %}"></script>
+    <script src="{% static 'safedirections/js/cbpAnimatedHeader.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{% static 'safedirections/js/agency.js' %}"></script>
     <script src="{% static 'safedirections/js/CRUD.js' %}"></script>
     <script src="{% static 'safedirections/js/render_map.js' %}"></script>
     <script src="{% static 'safedirections/js/geolocating.js' %}"></script>
     <script src="{% static 'safedirections/js/directions_routing.js' %}"></script>
     <script src="{% static 'safedirections/js/waypts_setter.js' %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'safedirections/css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'safedirections/bootstrap-3.3.6-dist/css/bootstrap.min.css' %}">
-</head>
-<body>
-    <h1>Calculate your route</h1>
-    <form id="calculate-route" name="calculate-route" action="#" method="get">
-        <label for="from">From:</label>
-        <input type="text" id="from" name="from" required="required" placeholder="An address" size="30" />
-        <a id="from-link" href="#">Get my position</a>
-        <br />
-
-        <label for="to">To:</label>
-        <input type="text" id="to" name="to" required="required" placeholder="Another address" size="30" />
-        <a id="to-link" href="#">Get my position</a>
-        <br />
-
-        <input type="submit" />
-        <input type="reset" />
-    </form>
-    <div id="map"></div>
-    <p id="error"></p>
-    <div id="map"></div>
-
-    <div class="modal fade" id="dangerModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                   <h4 class="modal-title">Danger Level</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Level</label>
-                        <select id="dangerLevel" class="form-control">
-                            <option value="0">Safe</option>
-                            <option value="1">Warning</option>
-                            <option value="2">Dangerous</option>
-                            <option value="3">Very Dangerous</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                   <button type="button" onclick="bookmarker()" class="btn btn-default" data-dismiss="modal">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </body>
 </html>
