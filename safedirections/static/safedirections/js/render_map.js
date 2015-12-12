@@ -26,8 +26,7 @@ function carregaMarkers(){
             console.log("get com sucesso", data);
 			data.forEach(function(element, index, list){
 				var location = new google.maps.LatLng(element.latlng.lat, element.latlng.lng);
-				console.log("PORRA", location);
-				placeCircle(location);
+				placeCircle(location,element.id);
 			});
     }).fail(function(){
         console.log("falhou");

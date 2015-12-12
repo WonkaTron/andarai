@@ -1,5 +1,6 @@
 // global variables
 //var way_pts = [];
+var gcircle;
 
 function placeMarker(location) {
     var marker = new google.maps.Marker({
@@ -17,7 +18,7 @@ function placeMarker(location) {
     infowindow.open(map, marker);
 }
 
-function placeCircle(location){
+function placeCircle(location, id){
 
     var circle = new google.maps.Circle({
         center: location,
@@ -26,8 +27,13 @@ function placeCircle(location){
         fillColor: '#FF6600',
         fillOpacity: 0.3,
         strokeColor: "#FFF",
-        strokeWeight: 0
+        strokeWeight: 0,
+        id: id
     });
 
-
+	google.maps.event.addListener(circle, 'click', function(event) {
+        gcircle = circle;
+        $("#dangerModal").modal("show");
+    });
 }
+
