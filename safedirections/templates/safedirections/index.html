@@ -132,9 +132,28 @@
                     <button type="reset" class="btn btn-default">Reset</button>
                 </form>
 
-                <div id="map"></div>
-                <p id="error"></p>
-
+                <div class="row">
+                    <div class="col-md-9">
+                        <div id="map"></div>
+                    </div>
+                    <div class="col-md-3 text-left aditional-padding">
+                        <h4 class="text-white text-center">Select a route</h4>
+                        <i class="text-white">(Ctrl-Click for multiple selection)</i>
+                        <br>
+                        <select class="right-panel" multiple="" id="waypoints">
+                            <option value="montreal, quebec">Montreal, QBC</option>
+                            <option value="toronto, ont">Toronto, ONT</option>
+                            <option value="chicago, il">Chicago</option>
+                            <option value="winnipeg, mb">Winnipeg</option>
+                            <option value="fargo, nd">Fargo</option>
+                            <option value="calgary, ab">Calgary</option>
+                            <option value="spokane, wa">Spokane</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <p id="error"></p>
+                    </div>
+                </div>
 
             </div>
         </div>
@@ -210,9 +229,10 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <h4>Be Part
-                                    <br>Of Our
-                                    <br>Story!
+                                <h4>E muito
+                                    <br>mais ainda
+                                    <br>est&aacute; por
+                                    <br>vir!
                                 </h4>
                             </div>
                         </li>
@@ -311,6 +331,27 @@
         </div>
     </footer>
 
+    <!-- routes list modal -->
+    <div class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- /routes list modal -->
+
+    <!-- edit danger zone -->
     <div class="modal fade" id="dangerModal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -336,6 +377,7 @@
             </div>
         </div>
     </div>
+    <!-- /edit danger zone -->
 
     <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js"></script>
@@ -352,6 +394,9 @@
     <script src="{% static 'safedirections/js/cbpAnimatedHeader.js' %}"></script>
 
     <!-- Custom Theme JavaScript -->
+    <script src="{% static 'safedirections/js/math.min.js' %}"></script>
+    <script src="{% static 'safedirections/js/straightCircle.js' %}"></script>
+    <script src="{% static 'safedirections/js/calculate_weight.js' %}"></script>
     <script src="{% static 'safedirections/js/agency.js' %}"></script>
     <script src="{% static 'safedirections/js/render_map.js' %}"></script>
     <script src="{% static 'safedirections/js/geolocating.js' %}"></script>

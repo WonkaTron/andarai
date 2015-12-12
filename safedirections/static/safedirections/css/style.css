@@ -16,3 +16,18 @@
 .get-position-link {
     font-size: 0.8em;
 }
+
+.right-panel {
+    float: left;
+    text-align: left;
+    width: 100%;
+    height: auto;
+}
+
+.my-text-left{
+    text-align: left !important;
+}
+
+.aditional-padding{
+    padding-top: 10vh;
+}
