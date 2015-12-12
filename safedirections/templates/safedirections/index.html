@@ -133,31 +133,7 @@
                 <div id="map"></div>
                 <p id="error"></p>
 
-                <div class="modal fade" id="dangerModal" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Danger Level</h4>
-                            </div>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Level</label>
-                                <select id="dangerLevel" class="form-control">
-                                    <option value="0">Safe</option>
-                                    <option value="1">Warning</option>
-                                    <option value="2">Dangerous</option>
-                                    <option value="3">Very Dangerous</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                            <button type="button" onclick="bookmarker()" class="btn btn-default" data-dismiss="modal">Save</button>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
@@ -363,6 +339,33 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal fade" id="dangerModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Danger Level</h4>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Level</label>
+                    <select id="dangerLevel" class="form-control">
+                        <option value="0">Safe</option>
+                        <option value="1">Warning</option>
+                        <option value="2">Dangerous</option>
+                        <option value="3">Very Dangerous</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" onclick="bookmarker()" class="btn btn-default" data-dismiss="modal">Save</button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://maps.googleapis.com/maps/api/js"></script>
 
     <!-- jQuery -->
