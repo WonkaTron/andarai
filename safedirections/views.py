@@ -27,6 +27,3 @@ class DangerDetail(generics.RetrieveUpdateDestroyAPIView):
         response = self.retrieve(request, *args, **kwargs)
         response.data['latlng'] = json.loads(response.data['latlng'])
         return response
-
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
