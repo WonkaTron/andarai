@@ -13,6 +13,8 @@ function initialize() {
 	// event listener to call placeMarker function implemented at 'waypts_setter.js' file
 	google.maps.event.addListener(map, 'click', function(event) {
         placeMarker(event.latLng);
+		create(event.latLng);
+
     });
 }
 
