@@ -1,4 +1,4 @@
-$(document).ready(function () {
+var geoLocatingInit = function () {
     // If the browser supports the Geolocation API
     if (typeof navigator.geolocation == "undefined") {
         $("#error").text("Your browser doesn't support the Geolocation API");
@@ -29,4 +29,4 @@ $(document).ready(function () {
             timeout: 10 * 1000 // 10 seconds
         });
     });
-});
+};

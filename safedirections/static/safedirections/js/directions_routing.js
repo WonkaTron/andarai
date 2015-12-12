@@ -28,9 +28,3 @@ function calculateRoute(from, to) {
         });
 }
 
-$(document).ready(function () {
-    $("#calculate-route").submit(function(event) {
-        event.preventDefault();
-        calculateRoute($("#from").val(), $("#to").val());
-    });
-});
