@@ -1,3 +1,5 @@
+var routes = [];
+
 function calculateRoute(from, to) {
     var directionsService = new google.maps.DirectionsService();
     var directionsRequest = {
@@ -14,6 +16,7 @@ function calculateRoute(from, to) {
         {
             for (var i = 0, len = response.routes.length; i < len; i++)
             {
+                routes = response.routes;
                 if (status == google.maps.DirectionsStatus.OK)
                 {
                     new google.maps.DirectionsRenderer({

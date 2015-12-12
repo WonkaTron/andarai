@@ -23,7 +23,7 @@ function placeCircle(location, id){
     var circle = new google.maps.Circle({
         center: location,
         map: map,
-        radius: 10000,
+        radius: 500,
         fillColor: '#FF6600',
         fillOpacity: 0.3,
         strokeColor: "#FFF",

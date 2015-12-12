@@ -1,5 +1,6 @@
 // global variables
 var map;
+var danger_points = [];
 
 function initialize() {
 	var mapCanvas = document.getElementById('map');
@@ -24,8 +25,9 @@ function carregaMarkers(){
 	$.get("/api/")
         .done(function(data){
             console.log("get com sucesso", data);
+            danger_points = data;
 			data.forEach(function(element, index, list){
-				var location = new google.maps.LatLng(element.latlng.lat, element.latlng.lng);
+                var location = new google.maps.LatLng(element.latlng.lat, element.latlng.lng);
 				placeCircle(location,element.id);
 			});
     }).fail(function(){
