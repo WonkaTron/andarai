@@ -5,8 +5,8 @@ function calculateRoute(from, to) {
         destination: to,
         travelMode: google.maps.DirectionsTravelMode.DRIVING,
         unitSystem: google.maps.UnitSystem.METRIC,
-        provideRouteAlternatives: true,
-        //waypoints: way_pts
+        //waypoints: way_pts,
+        provideRouteAlternatives: true
     };
     directionsService.route(
         directionsRequest,
