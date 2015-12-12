@@ -16,3 +16,18 @@ function placeMarker(location) {
     });
     infowindow.open(map, marker);
 }
+
+function placeCircle(location){
+
+    var circle = new google.maps.Circle({
+        center: location,
+        map: map,
+        radius: 10000,
+        fillColor: '#FF6600',
+        fillOpacity: 0.3,
+        strokeColor: "#FFF",
+        strokeWeight: 0
+    });
+
+
+}
