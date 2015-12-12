@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>andaraih</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="../../static/safedirections/js/render_map.js"></script>
+    <script src="../../static/safedirections/js/geolocating.js"></script>
+    <script src="../../static/safedirections/js/directions_routing.js"></script>
+    <script src="../../static/safedirections/js/waypts_setter.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../static/safedirections/css/style.css">
 </head>
 <body>
-    <h1>Andaraih</h1>
+    <h1>Calculate your route</h1>
+    <form id="calculate-route" name="calculate-route" action="#" method="get">
+        <label for="from">From:</label>
+        <input type="text" id="from" name="from" required="required" placeholder="An address" size="30" />
+        <a id="from-link" href="#">Get my position</a>
+        <br />
+
+        <label for="to">To:</label>
+        <input type="text" id="to" name="to" required="required" placeholder="Another address" size="30" />
+        <a id="to-link" href="#">Get my position</a>
+        <br />
+
+        <input type="submit" />
+        <input type="reset" />
+    </form>
+    <div id="map"></div>
+    <p id="error"></p>
+    <div id="map"></div>
 </body>
 </html>
