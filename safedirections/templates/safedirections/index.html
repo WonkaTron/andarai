@@ -110,30 +110,56 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Navegue</h2>
-                    <h3 class="section-subheading text-muted">Use nossa aplica&ccedil;&atilde;o! Planeje sua viagem e d&ecirc; sua contribui&ccedil;&atilde;o para comunidade. Vote nos pontos de perigo j&acute; criados ou crie novos pontos.</h3>
+                    <h3 class="section-subheading text-white">Use nossa aplica&ccedil;&atilde;o! Planeje sua viagem e d&ecirc; sua contribui&ccedil;&atilde;o para comunidade. Vote nos pontos de perigo j&aacute; criados ou crie novos pontos.</h3>
                 </div>
             </div>
-            <div class="row">
-                <h1>Calculate your route</h1>
-                <form id="calculate-route" name="calculate-route" action="#" method="get">
-                    <label for="from">From:</label>
-                    <input type="text" id="from" name="from" required="required" placeholder="An address" size="30" />
-                    <a id="from-link" href="#">Get my position</a>
-                    <br />
+            <div class="row text-center">
+                <h2 class="text-white">Calculate your route</h2>
+                <form class="form-inline" id="calculate-route" name="calculate-route" action="#" method="get">
+                    <div class="form-group">
+                        <label for="from" class="text-white">From:</label>
+                        <input class="form-control" type="text" id="from" name="from" required="required" placeholder="An address" size="30" />
+                        <a id="from-link" class="get-position-link" href="#">Get my position</a>
+                    </div>
 
-                    <label for="to">To:</label>
-                    <input type="text" id="to" name="to" required="required" placeholder="Another address" size="30" />
-                    <a id="to-link" href="#">Get my position</a>
-                    <br />
+                    <div class="form-group">
+                        <label for="to" class="text-white">To:</label>
+                        <input class="form-control" type="text" id="to" name="to" required="required" placeholder="Another address" size="30" />
+                        <a id="to-link" class="get-position-link" href="#">Get my position</a>
+                    </div>
 
-                    <input type="submit" />
-                    <input type="reset" />
+                    <button type="submit" class="btn btn-default">Send</button>
+                    <button type="reset" class="btn btn-default">Reset</button>
                 </form>
 
                 <div id="map"></div>
                 <p id="error"></p>
 
-
+                <div class="modal fade" id="dangerModal" role="dialog">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Danger Level</h4>
+                            </div>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Level</label>
+                                <select id="dangerLevel" class="form-control">
+                                    <option value="0">Safe</option>
+                                    <option value="1">Warning</option>
+                                    <option value="2">Dangerous</option>
+                                    <option value="3">Very Dangerous</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                            <button type="button" onclick="bookmarker()" class="btn btn-default" data-dismiss="modal">Save</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -233,52 +259,30 @@
                 <div class="col-sm-4">
                     <div class="team-member">
                         <img src="{% static 'safedirections/img/team/1.jpg' %}" class="img-responsive img-circle" alt="">
-                        <h4>Aluizio</h4>
-                        <p class="text-muted">Lead Designer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
+                        <h4>Aluizio dos Santos de Lima Filh</h4>
+                        <p class="text-muted">Django Boy</p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
                         <img src="{% static 'safedirections/img/team/2.jpg' %}" class="img-responsive img-circle" alt="">
                         <h4>Hugo de Melo Dantas</h4>
-                        <p class="text-muted">Lead Marketer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
+                        <p class="text-muted">Tinder Boy</p>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="team-member">
                         <img src="{% static 'safedirections/img/team/3.jpg' %}" class="img-responsive img-circle" alt="">
                         <h4>Thales Nathan Caic&oacute; Matias da Silva</h4>
-                        <p class="text-muted">Lead Developer</p>
-                        <ul class="list-inline social-buttons">
-                            <li><a href="#"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>
+                        <p class="text-muted">Besteirol da equipe</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                    <p class="large text-muted">
+                        Equipe Wonkatron em seus habitats naturais.
+                    </p>
                 </div>
             </div>
         </div>
@@ -290,22 +294,22 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <a href="#">
-                        <img src="{% static 'safedirections/img/logos/envato.jpg' %}" class="img-responsive img-centered" alt="">
+                        <img src="{% static 'safedirections/img/logos/B2W.png' %}" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="#">
-                        <img src="{% static 'safedirections/img/logos/designmodo.jpg' %}" class="img-responsive img-centered" alt="">
+                        <img src="{% static 'safedirections/img/logos/les.png' %}" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="#">
-                        <img src="{% static 'safedirections/img/logos/themeforest.jpg' %}" class="img-responsive img-centered" alt="">
+                        <img src="{% static 'safedirections/img/logos/logo-impeto.jpg' %}" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <a href="#">
-                        <img src="{% static 'safedirections/img/logos/creative-market.jpg' %}" class="img-responsive img-centered" alt="">
+                        <img src="{% static 'safedirections/img/logos/stone.png' %}" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
             </div>
@@ -316,17 +320,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; Your Website 2014</span>
+                    <span class="copyright">Copyright &copy; AndaraiH 2015</span>
                 </div>
                 <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
-                        </li>
-                    </ul>
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
@@ -340,32 +336,7 @@
         </div>
     </footer>
 
-    <div class="modal fade" id="dangerModal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Danger Level</h4>
-                </div>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label>Level</label>
-                    <select id="dangerLevel" class="form-control">
-                        <option value="0">Safe</option>
-                        <option value="1">Warning</option>
-                        <option value="2">Dangerous</option>
-                        <option value="3">Very Dangerous</option>
-                    </select>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" onclick="bookmarker()" class="btn btn-default" data-dismiss="modal">Save</button>
-            </div>
-        </div>
-    </div>
-
+    <!-- Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js"></script>
 
     <!-- jQuery -->
