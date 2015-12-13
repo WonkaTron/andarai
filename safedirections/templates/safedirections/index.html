@@ -98,7 +98,7 @@
                 <div class="col-md-4">
                     <span class="glyphicon glyphicon-stats"></span>
                     <h4 class="service-heading">Consulte</h4>
-                    <p class="text-muted">Use nossa API via Web Service para receber informa&ccedil;&otilde;es e estat&iacute;sticas sobre locais do mundo e faça sua pr&oacute;pria aplica&ccedil;&atilde;o.</p>
+                    <p class="text-muted">Saiba o qu&atilde;o perigoso um local estar.</p>
                 </div>
             </div>
         </div>
@@ -184,7 +184,7 @@
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>11/12/2015 - 20:20</h4>
-                                    <h4 class="subheading">Esta&ccedil;&atilde;o de <strike>integra&ccedil;&atilde;o cm o metr&ocirc; linha 2</strike> desenvolvimento</h4>
+                                    <h4 class="subheading">Esta&ccedil;&atilde;o de <strike>integra&ccedil;&atilde;o com o metr&ocirc; linha 2</strike> desenvolvimento</h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">Kinfolk ennui small batch, before they sold out fixie pinterest sustainable four loko. Keytar irony quinoa ugh. Everyday carry authentic hoodie seitan, bitters blue bottle umami readymade cold-pressed pabst freegan tofu PBR&B chartreuse vegan.</p>
@@ -198,7 +198,7 @@
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>12/11/2015 - 01:00</h4>
-                                    <h4 class="subheading">Caf&eacute;, por favor. Metido, n&atilde;o batido.</h4>
+                                    <h4 class="subheading">Caf&eacute;, por favor. Mexido, n&atilde;o batido.</h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">Bulbasaur Ivysaur Venusaur Charmander Charmeleon Charizard Squirtle Wartortle Blastoise Caterpie Metapod Butterfree Weedle Kakuna Beedrill Pidgey Pidgeotto Pidgeot Rattata Raticate</p>
@@ -221,7 +221,7 @@
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <h4>E muito
+                                <h4 style="margin-top: 25px;">E muito
                                     <br>mais ainda
                                     <br>est&aacute; por
                                     <br>vir!
@@ -281,22 +281,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3 col-sm-6">
-                    <a href="#">
+                    <a href="http://www.b2wdigital.com/">
                         <img src="{% static 'safedirections/img/logos/B2W.png' %}" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#">
+                    <a href="http://www.les.inf.puc-rio.br/wiki/index.php/P%C3%A1gina_principal">
                         <img src="{% static 'safedirections/img/logos/les.png' %}" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#">
+                    <a href="http://www.impeto.com.br">
                         <img src="{% static 'safedirections/img/logos/logo-impeto.jpg' %}" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="#">
+                    <a href="http://www.stone.com.br/">
                         <img src="{% static 'safedirections/img/logos/stone.png' %}" class="img-responsive img-centered" alt="">
                     </a>
                 </div>
@@ -314,34 +314,13 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
-                        <li><a href="#">Utilize a API</a>
-                        </li>
-                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a class="page-scroll" href="#page-top">Voltar ao topo</a></li>
+                        <li><a href="https://developers.google.com/maps/terms">Termos de Uso</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
-
-    <!-- routes list modal -->
-    <div class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Modal title</h4>
-                </div>
-                <div class="modal-body">
-                    <p>One fine body&hellip;</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-    <!-- /routes list modal -->
 
     <!-- edit danger zone -->
     <div class="modal fade" id="dangerModal" role="dialog">
@@ -351,21 +330,21 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">Danger Level</h4>
                 </div>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <label>Level</label>
-                    <select id="dangerLevel" class="form-control">
-                        <option value="0">Safe</option>
-                        <option value="1">Warning</option>
-                        <option value="2">Dangerous</option>
-                        <option value="3">Very Dangerous</option>
-                    </select>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Level</label>
+                        <select id="dangerLevel" class="form-control">
+                            <option value="0">Safe</option>
+                            <option value="1">Caution</option>
+                            <option value="2">Warning</option>
+                            <option value="3">Dangerous</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" onclick="update()" class="btn btn-default" data-dismiss="modal">Save</button>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" onclick="save()" class="btn btn-default" data-dismiss="modal">Save</button>
+                </div>
             </div>
         </div>
     </div>
