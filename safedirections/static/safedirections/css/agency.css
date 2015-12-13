@@ -571,6 +571,10 @@ footer ul.quicklinks {
   text-transform: uppercase;
   text-transform: none;
 }
+ul.social-buttons {
+  margin-bottom: 0;
+}
+
 .btn:focus,
 .btn:active,
 .btn.active,

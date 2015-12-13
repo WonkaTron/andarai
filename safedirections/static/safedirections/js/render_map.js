@@ -1,5 +1,6 @@
 // global variables
 var map;
+var actual_latlng;
 var danger_points = [];
 
 function initialize() {
@@ -7,19 +8,21 @@ function initialize() {
     var mapOptions = {
 		center: new google.maps.LatLng(-22.911612, -43.200770),
 		zoom: 8,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
+		mapTypeId: google.maps.MapTypeId.ROADMAP,
+        disableDoubleClickZoom: true
 	};
     map = new google.maps.Map(mapCanvas, mapOptions);
 
 	// event listener to call placeMarker function implemented at 'waypts_setter.js' file
-	google.maps.event.addListener(map, 'click', function(event) {
-        placeMarker(event.latLng);
-		create(event.latLng);
-
-
+	google.maps.event.addListener(map, 'dblclick', function(event) {
+        actual_latlng = event.latLng;
+        placeMarker(actual_latlng);
+		//create(event.latLng);
+        crup = create;
+        flag = "create";
+        $("#dangerModal").modal("show");
     });
 }
-
 
 function carregaMarkers(){
 	$.get("/api/")

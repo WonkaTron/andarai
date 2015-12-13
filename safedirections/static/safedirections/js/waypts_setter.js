@@ -33,6 +33,8 @@ function placeCircle(location, id){
 
 	google.maps.event.addListener(circle, 'click', function(event) {
         gcircle = circle;
+        crup = update;
+        flag = "update";
         $("#dangerModal").modal("show");
     });
 }

@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    window.scrollTo(0, 0);
     initialize();
     geoLocatingInit();
     $("#calculate-route").submit(function(event) {
