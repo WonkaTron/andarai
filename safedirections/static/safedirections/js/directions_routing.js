@@ -1,5 +1,9 @@
 var routes = [];
 var directions_renderers = [];
+var Rainbow = require('rainbowvis.js');
+var gradient = new Rainbow();
+gradient.setSpectrum('#00ff00', '#ff0000');
+gradient.setNumberRange(0, 20);
 
 function calculateRoute(from, to) {
     var directionsService = new google.maps.DirectionsService();
