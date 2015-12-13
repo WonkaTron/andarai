@@ -16,5 +16,10 @@ var RouteWeight = function(overview_path, danger_points){
         }
     }
 
-    return danger/(count);
+    if(count == 0) {
+        return 0;
+    }
+    else {
+        return danger/(count);
+    }
 };
