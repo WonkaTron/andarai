@@ -15,6 +15,7 @@ function calculateRoute(from, to) {
         directionsRequest,
         function(response, status)
         {
+            $("#waypoints").empty();
             response.routes.forEach(function(elem, i) {
                 $("#waypoints").append("<option value=" + i + ">" + elem.summary + "</option>");
             });
