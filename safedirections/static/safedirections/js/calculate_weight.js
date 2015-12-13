@@ -1,6 +1,7 @@
 var RouteWeight = function(overview_path, danger_points){
     var radius = 500;
     var count = 0;
+    var danger = 0;
     for(var i = 0; i < overview_path.length; i++){
         var latlng = overview_path[i];
 
@@ -9,10 +10,11 @@ var RouteWeight = function(overview_path, danger_points){
             var center = new google.maps.LatLng(latlng_center[0],latlng_center[1]);
             if(estahNaArea(latlng, center, radius)){
                 count++;
+                danger += danger_points[j].danger_level;
                 console.log("somou",latlng,radius);
             }
         }
     }
 
-    return count;
+    return danger/(count);
 };
