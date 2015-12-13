@@ -27,7 +27,7 @@ function calculateRoute(from, to) {
                     directions_renderers.push(new google.maps.DirectionsRenderer({
                         map: map,  // global object set at 'render_map.js' file
                         directions: response,
-                        routeIndex: i
+                        routeIndex: i,
                     }));
                 }
                 else
